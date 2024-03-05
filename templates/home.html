@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Employee Hierarchy{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-5 mb-4">Employee Hierarchy</h1>
+    <ul class="list-group">
+        {% for employee in employees %}
+        <li class="list-group-item">
+            {{ employee.full_name }} - {{ employee.position.name }}
+            {% if employee.subordinates.all %}
+            <ul class="list-group mt-3">
+                {% include "employee/employee_list.html" with employees=employee.subordinates.all %}
+            </ul>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock content %}

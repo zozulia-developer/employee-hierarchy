@@ -1,0 +1,12 @@
+<ul class="list-group">
+    {% for employee in employees %}
+        <li class="list-group-item">
+            {{ employee.full_name }} - {{ employee.position.name }}
+            {% if employee.subordinates.all %}
+                <ul class="list-group mt-3">
+                    {% include "employee/employee_list.html" with employees=employee.subordinates.all %}
+                </ul>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
