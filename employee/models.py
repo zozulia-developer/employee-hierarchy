@@ -1,5 +1,6 @@
 from django.db import models
 from mptt.fields import TreeForeignKey
+from mptt.managers import TreeManager
 from mptt.models import MPTTModel
 
 
@@ -24,9 +25,15 @@ class Employee(MPTTModel):
         blank=True,
         related_name='subordinates'
     )
+    objects = TreeManager()
 
     class MPTTMeta:
         order_insertion_by = ['last_name', 'first_name', 'middle_name']
+        level_attr = 'mptt_level'
+        parent_attr = 'parent'
+
+        def __init__(self):
+            self.max_level = 7
 
     def __str__(self):
         return f"{self.last_name} {self.first_name} {self.middle_name}"

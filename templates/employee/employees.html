@@ -30,6 +30,7 @@
         </div>
         <div class="col">
             <button id="search-button" class="btn btn-primary">Search</button>
+            <a href="{% url 'employee_list' %}" class="btn btn-secondary">Clear</a>
         </div>
     </div>
     <table id="employee-table" class="table">
@@ -70,7 +71,7 @@
         {% endfor %}
         </tbody>
     </table>
-     <nav aria-label="Page navigation" class="mt-5">
+    <nav aria-label="Page navigation" class="mt-5">
         <ul class="pagination justify-content-center">
             {% if page_obj.has_previous %}
             <li class="page-item">
@@ -85,12 +86,14 @@
             </li>
             {% endif %}
             {% for num in page_obj.paginator.page_range %}
-            {% if page_obj.number == num %}
+            {% if num == page_obj.number %}
             <li class="page-item active" aria-current="page">
-                <span class="page-link">{{ num }}<span class="sr-only">(current)</span></span>
+                <span class="page-link">{{ num }}</span>
             </li>
-            {% else %}
+            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
             <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+            {% elif num == page_obj.number|add:'-3' or num == page_obj.number|add:'3' %}
+            <li class="page-item disabled"><span class="page-link">...</span></li>
             {% endif %}
             {% endfor %}
             {% if page_obj.has_next %}
@@ -107,7 +110,6 @@
             {% endif %}
         </ul>
     </nav>
-
 </div>
 
 <script>

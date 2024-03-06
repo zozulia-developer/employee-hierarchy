@@ -1,0 +1,702 @@
+[
+  {
+    "model": "employee.position",
+    "pk": 1,
+    "fields": {
+      "name": "Prison officer"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 2,
+    "fields": {
+      "name": "Designer, television/film set"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 3,
+    "fields": {
+      "name": "Field seismologist"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 4,
+    "fields": {
+      "name": "Medical secretary"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 5,
+    "fields": {
+      "name": "Chief Operating Officer"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 6,
+    "fields": {
+      "name": "Ship broker"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 7,
+    "fields": {
+      "name": "Careers information officer"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 8,
+    "fields": {
+      "name": "Government social research officer"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 9,
+    "fields": {
+      "name": "Merchant navy officer"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 10,
+    "fields": {
+      "name": "Speech and language therapist"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 11,
+    "fields": {
+      "name": "Homeopath"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 12,
+    "fields": {
+      "name": "Loss adjuster, chartered"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 13,
+    "fields": {
+      "name": "Animal technologist"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 14,
+    "fields": {
+      "name": "Accountant, chartered"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 15,
+    "fields": {
+      "name": "Engineering geologist"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 16,
+    "fields": {
+      "name": "Town planner"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 17,
+    "fields": {
+      "name": "Technical author"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 18,
+    "fields": {
+      "name": "Hydrogeologist"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 19,
+    "fields": {
+      "name": "Jewellery designer"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 20,
+    "fields": {
+      "name": "Psychologist, sport and exercise"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 21,
+    "fields": {
+      "name": "Sound technician, broadcasting/film/video"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 22,
+    "fields": {
+      "name": "Textile designer"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 23,
+    "fields": {
+      "name": "Surveyor, mining"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 24,
+    "fields": {
+      "name": "Control and instrumentation engineer"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 25,
+    "fields": {
+      "name": "Pharmacist, community"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 26,
+    "fields": {
+      "name": "Aid worker"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 27,
+    "fields": {
+      "name": "Community development worker"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 28,
+    "fields": {
+      "name": "Comptroller"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 29,
+    "fields": {
+      "name": "Production assistant, radio"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 30,
+    "fields": {
+      "name": "Chief Executive Officer"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 31,
+    "fields": {
+      "name": "Journalist, magazine"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 32,
+    "fields": {
+      "name": "Insurance underwriter"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 33,
+    "fields": {
+      "name": "Designer, multimedia"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 34,
+    "fields": {
+      "name": "Insurance risk surveyor"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 35,
+    "fields": {
+      "name": "Environmental manager"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 36,
+    "fields": {
+      "name": "Press sub"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 37,
+    "fields": {
+      "name": "Engineer, land"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 38,
+    "fields": {
+      "name": "Restaurant manager"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 39,
+    "fields": {
+      "name": "Advertising account executive"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 40,
+    "fields": {
+      "name": "Music therapist"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 41,
+    "fields": {
+      "name": "Information officer"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 42,
+    "fields": {
+      "name": "Sport and exercise psychologist"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 43,
+    "fields": {
+      "name": "Retail manager"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 44,
+    "fields": {
+      "name": "Cartographer"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 45,
+    "fields": {
+      "name": "Legal secretary"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 46,
+    "fields": {
+      "name": "Scientist, audiological"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 47,
+    "fields": {
+      "name": "Civil engineer, consulting"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 48,
+    "fields": {
+      "name": "Travel agency manager"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 49,
+    "fields": {
+      "name": "Learning mentor"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 50,
+    "fields": {
+      "name": "Teacher, secondary school"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 51,
+    "fields": {
+      "name": "Editor, film/video"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 52,
+    "fields": {
+      "name": "Music tutor"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 53,
+    "fields": {
+      "name": "Film/video editor"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 54,
+    "fields": {
+      "name": "Chartered management accountant"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 55,
+    "fields": {
+      "name": "Surveyor, land/geomatics"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 56,
+    "fields": {
+      "name": "Lexicographer"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 57,
+    "fields": {
+      "name": "Financial planner"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 58,
+    "fields": {
+      "name": "Financial risk analyst"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 59,
+    "fields": {
+      "name": "Patent examiner"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 60,
+    "fields": {
+      "name": "Economist"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 61,
+    "fields": {
+      "name": "Academic librarian"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 62,
+    "fields": {
+      "name": "Forensic psychologist"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 63,
+    "fields": {
+      "name": "Clinical biochemist"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 64,
+    "fields": {
+      "name": "Horticulturist, commercial"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 65,
+    "fields": {
+      "name": "Child psychotherapist"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 66,
+    "fields": {
+      "name": "Dietitian"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 67,
+    "fields": {
+      "name": "Warehouse manager"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 68,
+    "fields": {
+      "name": "Toxicologist"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 69,
+    "fields": {
+      "name": "Commercial/residential surveyor"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 70,
+    "fields": {
+      "name": "Telecommunications researcher"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 71,
+    "fields": {
+      "name": "Radio broadcast assistant"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 72,
+    "fields": {
+      "name": "Information systems manager"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 73,
+    "fields": {
+      "name": "Archivist"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 74,
+    "fields": {
+      "name": "Water engineer"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 75,
+    "fields": {
+      "name": "Museum/gallery curator"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 76,
+    "fields": {
+      "name": "Television/film/video producer"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 77,
+    "fields": {
+      "name": "Water quality scientist"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 78,
+    "fields": {
+      "name": "Stage manager"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 79,
+    "fields": {
+      "name": "Industrial/product designer"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 80,
+    "fields": {
+      "name": "Clinical psychologist"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 81,
+    "fields": {
+      "name": "Product/process development scientist"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 82,
+    "fields": {
+      "name": "Community arts worker"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 83,
+    "fields": {
+      "name": "Pilot, airline"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 84,
+    "fields": {
+      "name": "Psychologist, clinical"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 85,
+    "fields": {
+      "name": "Software engineer"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 86,
+    "fields": {
+      "name": "Higher education careers adviser"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 87,
+    "fields": {
+      "name": "Designer, ceramics/pottery"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 88,
+    "fields": {
+      "name": "Broadcast journalist"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 89,
+    "fields": {
+      "name": "IT technical support officer"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 90,
+    "fields": {
+      "name": "Brewing technologist"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 91,
+    "fields": {
+      "name": "Petroleum engineer"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 92,
+    "fields": {
+      "name": "Ecologist"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 93,
+    "fields": {
+      "name": "Occupational therapist"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 94,
+    "fields": {
+      "name": "Geologist, wellsite"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 95,
+    "fields": {
+      "name": "Occupational hygienist"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 96,
+    "fields": {
+      "name": "Surveyor, quantity"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 97,
+    "fields": {
+      "name": "Architect"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 98,
+    "fields": {
+      "name": "Computer games developer"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 99,
+    "fields": {
+      "name": "Dramatherapist"
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 100,
+    "fields": {
+      "name": "Accountant, chartered management"
+    }
+  }
+]

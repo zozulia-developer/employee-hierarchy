@@ -44,12 +44,22 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
-8. Create a superuser:
+8. Load fixture:
+```shell
+python manage.py loaddata fixtures/employee/positions.json
+```
+
+9. Populate the database with employees:
+```shell
+python manage.py seed_employees 100
+```
+
+10. Create a superuser:
 ```sh
  python manage.py createsuperuser
 ```
 
-9. Collect static files:
+11. Collect static files:
 ```sh
 python manage.py collectstatic
 ```
