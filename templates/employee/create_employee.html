@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Create Employee{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-5 mb-4">Create Employee</h1>
+    <form method="post" class="mb-5">
+        {% csrf_token %}
+        <div class="mb-3">
+            {{ form.first_name.label_tag }}
+            {{ form.first_name }}
+        </div>
+        <div class="mb-3">
+            {{ form.last_name.label_tag }}
+            {{ form.last_name }}
+        </div>
+        <div class="mb-3">
+            {{ form.middle_name.label_tag }}
+            {{ form.middle_name }}
+        </div>
+        <div class="mb-3">
+            {{ form.position.label_tag }}
+            {{ form.position }}
+        </div>
+        <div class="mb-3">
+            {{ form.hire_date.label_tag }}
+            {{ form.hire_date }}
+        </div>
+        <div class="mb-3">
+            {{ form.email.label_tag }}
+            {{ form.email }}
+        </div>
+        <div class="mb-3">
+            {{ form.parent.label_tag }}
+            {{ form.parent }}
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+{% endblock content %}

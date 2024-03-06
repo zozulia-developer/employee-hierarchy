@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+
+{% block title %}Employee List{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1 class="mt-5 mb-5">Employee List</h1>
+        {% if user.is_authenticated and user.is_staff %}
+        <div class="btn-group mt-2 mb-2">
+            <a href="{% url 'create_position' %}" class="btn btn-primary">Create New Position</a>&nbsp;
+            <a href="{% url 'create_employee' %}" class="btn btn-primary">Create New Employee</a>
+        </div>
+        {% endif %}
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <input type="text" id="search-query" class="form-control" placeholder="Search">
+        </div>
+        <div class="col">
+            <select id="sort-field" class="form-select">
+                <option value="">Sort by...</option>
+                <option value="first_name">First Name</option>
+                <option value="last_name">Last Name</option>
+                <option value="middle_name">Middle Name</option>
+                <option value="position">Position</option>
+                <option value="hire_date">Hire Date</option>
+                <option value="email">Email</option>
+            </select>
+        </div>
+        <div class="col">
+            <button id="search-button" class="btn btn-primary">Search</button>
+        </div>
+    </div>
+    <table id="employee-table" class="table">
+        <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Middle Name</th>
+            <th>Position</th>
+            <th>Hire Date</th>
+            <th>Email</th>
+            {% if user.is_authenticated and user.is_staff %}
+            <th>Action</th>
+            {% endif %}
+        </tr>
+        </thead>
+        <tbody>
+        {% for employee in employees %}
+        <tr>
+            <td>{{ employee.first_name }}</td>
+            <td>{{ employee.last_name }}</td>
+            <td>{{ employee.middle_name }}</td>
+            <td>{{ employee.position }}</td>
+            <td>{{ employee.hire_date }}</td>
+            <td>{{ employee.email }}</td>
+            {% if user.is_authenticated and user.is_staff %}
+            <td>
+                <div class="btn-group">
+                    <a href="{% url 'update_employee' employee.id %}" class="btn btn-primary">Edit</a>&nbsp;
+                    <form action="{% url 'delete_employee' employee.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            </td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="pagination">
+        <span class="step-links">
+            {% if employees.has_previous %}
+                <a href="?page=1" class="page-link">« first</a>
+                <a href="?page={{ employees.previous_page_number }}" class="page-link">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ employees.number }} of {{ employees.paginator.num_pages }}.
+            </span>
+
+            {% if employees.has_next %}
+                <a href="?page={{ employees.next_page_number }}" class="page-link">next</a>
+                <a href="?page={{ employees.paginator.num_pages }}" class="page-link">last »</a>
+            {% endif %}
+        </span>
+    </div>
+</div>
+
+<script>
+    document.getElementById('search-button').addEventListener('click', function() {
+        let searchQuery = document.getElementById('search-query').value;
+        let sortField = document.getElementById('sort-field').value;
+        let formData = new FormData();
+        formData.append('search_query', searchQuery);
+        formData.append('sort_field', sortField);
+
+        fetch('', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRFToken': '{{ csrf_token }}'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            let tbody = document.querySelector('#employee-table tbody');
+            tbody.innerHTML = '';
+            data.forEach(employee => {
+                let tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${employee.first_name}</td>
+                    <td>${employee.last_name}</td>
+                    <td>${employee.middle_name}</td>
+                    <td>${employee.position}</td>
+                    <td>${employee.hire_date}</td>
+                    <td>${employee.email}</td>
+                    {% if user.is_authenticated and user.is_staff %}
+                    <td>
+                        <div class="btn-group">
+                            <a href="/employees/${employee.id}/update/" class="btn btn-primary">Edit</a>&nbsp;
+                            <form action="/employees/${employee.id}/delete/" method="post">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </div>
+                    </td>
+                    {% endif %}
+                `;
+                tbody.appendChild(tr);
+            });
+        });
+    });
+</script>
+{% endblock content %}

@@ -13,8 +13,27 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Employee Hierarchy</a>
+                <a class="navbar-brand" href="{% url 'home' %}">Employee Hierarchy</a>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'employee_list' %}">Employees</a>
+                    </li>
+                </ul>
             </div>
+             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    {% if user.is_authenticated %}
+                    <form class="d-flex" action="{% url 'logout' %}" method="post">
+                        {% csrf_token %}
+                        <span class="navbar-text me-2"><strong>Welcome, {{ user.email }} !</strong></span>
+                        <button class="btn btn-outline-danger me-2" type="submit">Logout</button>
+                    </form>
+                    {% else %}
+                    <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                    <a class="nav-item nav-link" href="{% url 'signup' %}">Signup</a>
+                    {% endif %}
+                </div>
+              </div>
         </nav>
         <div class="content">
             {% block content %}
