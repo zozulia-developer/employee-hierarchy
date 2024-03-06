@@ -16,12 +16,14 @@ git clone https://github.com/zozulia-developer/employee-hierarchy.git
 cd employee-hierarchy
 ```
 
-3. Create a virtual environment:
+3. Create environment file `.env` from example `.env.example`
+
+4. Create a virtual environment:
 ```sh
 python -m venv venv
 ```
 
-4. Activate the virtual environment:
+5. Activate the virtual environment:
 - On Windows:
 ```sh
 venv\Scripts\activate
@@ -31,23 +33,23 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
-5. Install the required packages:
+6. Install the required packages:
 ```sh
 pip install -r requirements.txt
 ```
 
-6. Run database migrations:
+7. Run database migrations:
 ```sh
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-7. Create a superuser:
+8. Create a superuser:
 ```sh
  python manage.py createsuperuser
 ```
 
-8. Collect static files:
+9. Collect static files:
 ```sh
 python manage.py collectstatic
 ```
