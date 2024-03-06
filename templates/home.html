@@ -5,17 +5,66 @@
 {% block content %}
 <div class="container">
     <h1 class="mt-5 mb-4">Employee Hierarchy</h1>
-    <ul class="list-group">
+    <div class="list-group d-grid gap-3">
         {% for employee in employees %}
-        <li class="list-group-item">
-            {{ employee.full_name }} - {{ employee.position.name }}
+        <a href="#" class="list-group-item list-group-item-action mt-5" data-bs-toggle="collapse"
+           data-bs-target="#employee-{{ employee.id }}">
             {% if employee.subordinates.all %}
-            <ul class="list-group mt-3">
-                {% include "employee/employee_list.html" with employees=employee.subordinates.all %}
-            </ul>
+            <span class="text-uppercase"><strong>Boss</strong><br></span>
             {% endif %}
-        </li>
+            <span><b>Full Name:</b> </span>{{ employee.full_name }}<br>
+            <span><b>Position:</b> </span>{{ employee.position.name }}
+            {% if employee.subordinates.all %}
+            <button class="btn btn-sm btn-secondary float-end" data-bs-toggle="collapse"
+                    data-bs-target="#employee-{{ employee.id }}">Collapse
+            </button>
+            {% endif %}
+        </a>
+        <div id="employee-{{ employee.id }}" class="collapse">
+            {% if employee.subordinates.all %}
+            <div class="list-group mt-3">
+                {% include "employee/employee_list.html" with employees=employee.subordinates.all %}
+            </div>
+            {% endif %}
+        </div>
         {% endfor %}
-    </ul>
+    </div>
+    <nav aria-label="Page navigation" class="mt-5">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page=1" aria-label="First">
+                    <span aria-hidden="true">««</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                    <span aria-hidden="true">«</span>
+                </a>
+            </li>
+            {% endif %}
+            {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+            <li class="page-item active" aria-current="page">
+                <span class="page-link">{{ num }}<span class="sr-only">(current)</span></span>
+            </li>
+            {% else %}
+            <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+            {% endif %}
+            {% endfor %}
+            {% if page_obj.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                    <span aria-hidden="true">»</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}" aria-label="Last">
+                    <span aria-hidden="true">»»</span>
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
 </div>
 {% endblock content %}

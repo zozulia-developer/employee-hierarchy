@@ -10,10 +10,18 @@ from .models import Employee, Position
 
 class EmployeeHierarchyView(TemplateView):
     template_name = 'home.html'
+    paginate_by = 10
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['employees'] = Employee.objects.all()
+        employees_list = Employee.objects.all()
+        paginator = Paginator(employees_list, self.paginate_by)
+
+        page_number = self.request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+
+        context['employees'] = page_obj.object_list
+        context['page_obj'] = page_obj
         return context
 
 
@@ -25,14 +33,19 @@ class EmployeeListView(ListView):
     paginate_by = 10
 
     def get_queryset(self):
-        sort_by = self.request.GET.get('sort')
-        if sort_by:
-            return Employee.objects.all().order_by(sort_by)
         return Employee.objects.all()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['sort_by'] = self.request.GET.get('sort', '')
+        employees_list = self.get_queryset()
+        sort_by = self.request.GET.get('sort')
+        if sort_by:
+            employees_list = employees_list.order_by(sort_by)
+        paginator = Paginator(employees_list, self.paginate_by)
+        page_number = self.request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+        context['page_obj'] = page_obj
+        context['sort_by'] = sort_by
         return context
 
     def post(self, request, *args, **kwargs):
@@ -50,13 +63,13 @@ class EmployeeListView(ListView):
             employees = employees.order_by(sort_field)
 
         paginator = Paginator(employees, self.paginate_by)
-        page = request.GET.get('page')
+        page_number = request.GET.get('page')
         try:
-            employees = paginator.page(page)
+            employees_page = paginator.page(page_number)
         except PageNotAnInteger:
-            employees = paginator.page(1)
+            employees_page = paginator.page(1)
         except EmptyPage:
-            employees = paginator.page(paginator.num_pages)
+            employees_page = paginator.page(paginator.num_pages)
 
         data = [{'id': employee.id,
                  'first_name': employee.first_name,
@@ -64,7 +77,7 @@ class EmployeeListView(ListView):
                  'middle_name': employee.middle_name,
                  'position': employee.position.name,
                  'hire_date': employee.hire_date,
-                 'email': employee.email} for employee in employees]
+                 'email': employee.email} for employee in employees_page]
 
         return JsonResponse(data, safe=False)
 

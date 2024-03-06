@@ -1,7 +1,8 @@
 <ul class="list-group">
     {% for employee in employees %}
         <li class="list-group-item">
-            {{ employee.full_name }} - {{ employee.position.name }}
+            <strong>---></strong>
+            <span><b>Full Name:</b> </span>{{ employee.full_name }} <span><b>Position:</b> </span>{{ employee.position.name }}
             {% if employee.subordinates.all %}
                 <ul class="list-group mt-3">
                     {% include "employee/employee_list.html" with employees=employee.subordinates.all %}
